@@ -1,262 +1,259 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 ul {
-  list-style: none;
+    list-style: none;
 }
+
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
+
 body {
-  font-family: "Noto Sans KR", sans-serif;
-  color: #333333;
-  background-color: #fff7f0;
-  text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333333;
+    background-color: #fff7f0;
+    text-align: center;
 }
+
 h1,
 h2,
 h3 {
-  font-family: "Jua", sans-serif;
-  font-weight: normal;
+    font-family: "Jua", sans-serif;
+    font-weight: normal;
 }
 
-/* ===== 공통 ===== */
-main {
-  width: 720px;
-  margin: 0 auto;
-  padding-bottom: 60px;
-}
-main section {
-  margin-top: 60px;
-}
-main h2 {
-  margin-bottom: 24px;
-  font-size: 30px;
-  color: #715be2;
-}
-
-/* ===== 0. 헤더 (animation: float / fade-up) ===== */
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  height: 315px;
-  background-color: #ffe3ec;
+    background-color: #ffe3ec;
+    padding: 50px 0 60px;
 }
-.balloons {
-  display: flex;
-  gap: 24px;
-  font-size: 56px;
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 60px;
 }
-.balloons span {
-  animation-name: float;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+
+h2 {
+    margin: 50px 0 24px;
+    font-size: 28px;
+    color: #6c5ce7;
 }
-.balloons span:nth-child(1) {
-  animation-delay: 0s;
+
+.balloons>span {
+    display: inline-block;
+    font-size: 48px;
+    animation: float 1s infinite ease-in-out alternate;
 }
-.balloons span:nth-child(2) {
-  animation-delay: 0.3s;
+
+.balloons>span:nth-child(2) {
+    animation-delay: .3s;
 }
-.balloons span:nth-child(3) {
-  animation-delay: 0.6s;
+
+.balloons>span:nth-child(3) {
+    animation-delay: .6s;
 }
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-16px);
-  }
+
+.sub {
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 13px;
+    color: #ff6b8b;
 }
-header .sub {
-  font-size: 14px;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  color: #e98b9d;
-}
+
 header h1 {
-  font-size: 46px;
-  color: #e98b9d;
-  animation-name: fade-up;
-  animation-duration: 1s;
-}
-@keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    margin: 8px 0 12px;
+    font-size: 44px;
+    color: #ff6b8b;
+    animation: fade-up 1s 1 ease-out;
 }
 
-/* ===== 1. 파티 안내 (transform + transition) ===== */
+
 .cards {
-  display: flex;
-  gap: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
+
 .cards li {
-  flex: 1;
-  padding: 28px 16px;
-  background-color: #fff;
-  border: 2px solid #eed79f;
-  border-radius: 16px;
-  transition: all 0.3s;
+    width: 180px;
+    border: 2px solid #ffd166;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px 16px;
+    transform: rotate(-4deg);
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer;
 }
-.cards li:nth-child(odd) {
-  transform: rotate(-4deg);
+
+.cards li:nth-child(2) {
+    transform: rotate(4deg);
 }
-.cards li:nth-child(even) {
-  transform: rotate(3deg);
-}
+
 .cards li:hover {
-  transform: translateY(-10px) rotate(0deg) scale(1.05);
-}
-.cards .icon {
-  font-size: 40px;
-}
-.cards h3 {
-  margin: 8px 0;
-  font-size: 22px;
-  color: #6f5ddc;
-}
-.cards li p:last-child {
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-/* ===== 2. 케이크 (animation: spin / wiggle) ===== */
-.stars {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-}
-.star {
-  font-size: 40px;
-  animation-name: spin;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.cake-icon {
-  font-size: 80px;
-  animation-name: wiggle;
-  animation-duration: 0.6s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-@keyframes spin {
-  0% {
     transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes wiggle {
-  0% {
-    transform: rotate(-8deg);
-  }
-  100% {
-    transform: rotate(8deg);
-  }
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    ;
 }
 
-/* ===== 3. 참석 버튼 (transition + :hover / :active) ===== */
-.rsvp .btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border: 2px solid #ff6b8b;
-  border-radius: 30px;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-.rsvp .yes {
-  margin-right: 10px;
-  background-color: #ff6b8b;
-  color: #fff;
-}
-.rsvp .no {
-  background-color: #fff;
-  color: #ff6b8b;
-}
-.rsvp .btn:hover {
-  background-color: #6c5ce7;
-  border-color: #6c5ce7;
-  color: #fff;
-  transform: translateY(-4px);
-}
-.rsvp .btn:active {
-  transform: scale(0.95);
+.icon {
+    font-size: 40px;
 }
 
-/* ===== 4. 파티 순서 (position relative + absolute) ===== */
+.stars>span {
+    display: inline-block;
+}
+
+.cake-icon {
+    font-size: 96px;
+    margin: 0 30px;
+    animation: wiggle .8s ease-in-out infinite alternate;
+}
+
+.star {
+    font-size: 32px;
+    animation: spin 3s linear infinite;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 14px 28px;
+    border: 2px solid #ff6b8b;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.no {
+    background-color: #fff;
+    color: #ff6b8b
+}
+
+.yes {
+    background-color: #ff6b8b;
+    color: #fff
+}
+
+.btn:hover {
+    background-color: #6c5ce7;
+    border-color: #6c5ce7;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+.btn:active {
+    transform: scale(.95);
+}
+
 .plans {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  width: 600px;
-  margin: 0 auto;
-}
-.plans li {
-  position: relative;
-  height: 210px;
-  background-color: #fff;
-  border: 3px solid #ff8a80;
-  border-radius: 16px;
-  overflow: hidden;
-}
-.plans .time {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 4px 12px;
-  background-color: #ffd6e5;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ff6b8b;
-}
-.plans .icon {
-  font-size: 64px;
-  line-height: 210px;
-}
-.plans .panel {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 16px 12px;
-  background-color: #ff8a80;
-  color: #fff;
-  transform: translateY(100%);
-  transition: all 0.3s;
-}
-.plans li:hover .panel {
-  transform: translateY(0);
-}
-.plans .panel h3 {
-  margin-bottom: 4px;
-  font-size: 22px;
-}
-.plans .panel p {
-  font-size: 13px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: auto;
+    gap: 24px;
 }
 
-/* ===== 5. 푸터 ===== */
+.plans li {
+    border: 2px solid #ff6b8b;
+    height: 200px;
+    border-radius: 16px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    align-content: center;
+}
+
+.plans li .icon {
+    font-size: 64px;
+    transition: transform .3s;
+
+}
+
+.time {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background-color: #ffe3ec;
+    padding: 2px 10px;
+    color: #ff6b8b;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.panel {
+    position: absolute;
+    background-color: #ff6b8b;
+    width: 100%;
+    bottom: 0;
+    padding: 16px 0;
+    transform: translateY(100%);
+    transition: transform .3s;
+    color: #fff
+}
+
+
+.plans li:hover .panel {
+    transform: translateY(0);
+}
+
+.plans li:hover .icon {
+    transform: translateY(-20px);
+}
+
 footer {
-  padding: 24px 0;
-  background-color: #6c5ce7;
-  color: #fff;
-  font-size: 14px;
+    padding: 24px 40px;
+    background-color: #6c5ce7;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+@keyframes wiggle {
+    from {
+        transform: rotate(-6deg);
+    }
+
+    to {
+        transform: rotate(6deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
 }
