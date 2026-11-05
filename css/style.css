@@ -23,7 +23,7 @@ h3 {
   font-weight: normal;
 }
 
-
+/* ===== 공통 ===== */
 main {
   width: 720px;
   margin: 0 auto;
@@ -35,10 +35,10 @@ main section {
 main h2 {
   margin-bottom: 24px;
   font-size: 30px;
-  color: #6c5ce7;
+  color: #715be2;
 }
 
-
+/* ===== 0. 헤더 (animation: float / fade-up) ===== */
 header {
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ header {
   align-items: center;
   gap: 10px;
   height: 315px;
-  background-color: #ffd6e5;
+  background-color: #ffe3ec;
 }
 .balloons {
   display: flex;
@@ -80,11 +80,11 @@ header .sub {
   font-size: 14px;
   letter-spacing: 8px;
   text-transform: uppercase;
-  color: #ff6b8b;
+  color: #e98b9d;
 }
 header h1 {
   font-size: 46px;
-  color: #ff6b8b;
+  color: #e98b9d;
   animation-name: fade-up;
   animation-duration: 1s;
 }
@@ -99,7 +99,7 @@ header h1 {
   }
 }
 
-
+/* ===== 1. 파티 안내 (transform + transition) ===== */
 .cards {
   display: flex;
   gap: 24px;
@@ -108,7 +108,7 @@ header h1 {
   flex: 1;
   padding: 28px 16px;
   background-color: #fff;
-  border: 2px solid #ffd166;
+  border: 2px solid #eed79f;
   border-radius: 16px;
   transition: all 0.3s;
 }
@@ -127,14 +127,14 @@ header h1 {
 .cards h3 {
   margin: 8px 0;
   font-size: 22px;
-  color: #6c5ce7;
+  color: #6f5ddc;
 }
 .cards li p:last-child {
   line-height: 1.6;
   font-size: 15px;
 }
 
-
+/* ===== 2. 케이크 (animation: spin / wiggle) ===== */
 .stars {
   display: flex;
   justify-content: center;
@@ -172,7 +172,7 @@ header h1 {
   }
 }
 
-
+/* ===== 3. 참석 버튼 (transition + :hover / :active) ===== */
 .rsvp .btn {
   display: inline-block;
   padding: 14px 28px;
@@ -200,7 +200,7 @@ header h1 {
   transform: scale(0.95);
 }
 
-
+/* ===== 4. 파티 순서 (position relative + absolute) ===== */
 .plans {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -253,7 +253,7 @@ header h1 {
   font-size: 13px;
 }
 
-
+/* ===== 5. 푸터 ===== */
 footer {
   padding: 24px 0;
   background-color: #6c5ce7;
